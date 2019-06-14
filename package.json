@@ -7,7 +7,8 @@
     "react": "^16.8.6",
     "react-d3-library": "^1.1.8",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "typescript": "^3.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,8 +32,21 @@
     ]
   },
   "devDependencies": {
+    "cross-fetch": "^3.0.3",
+    "d3-array": "^2.2.0",
+    "d3-axis": "^1.0.12",
+    "d3-brush": "^1.0.6",
+    "d3-drag": "^1.2.3",
+    "d3-force": "^2.0.1",
     "d3-scale": "^3.0.0",
+    "d3-selection": "^1.4.0",
+    "d3-svg-legend": "^2.25.6",
+    "d3-transition": "^1.2.0",
+    "d3-zoom": "^1.7.3",
     "pg": "^7.11.0",
-    "react-redux": "^7.0.3"
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }

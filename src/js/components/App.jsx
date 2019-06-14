@@ -1,13 +1,15 @@
 import React from 'react';
 import DoctorWhoForm from './DoctorWhoForm';
-//import DoctorWhoGraph from './DoctorWhoGraph';
+// import DoctorWhoGraph from './DoctorWhoGraph';
+import ConnectedDWGraph from './DoctorWhoGraph';
 
 const App = () => (
 	<div className = "container">
 		<h1>Interactive <i>Doctor Who</i></h1>
-		<br /><br />
+		<br />
 		<DoctorWhoForm />
-		<br /><br />
+		<br />
+		<ConnectedDWGraph />
 	</div>
 );
 
