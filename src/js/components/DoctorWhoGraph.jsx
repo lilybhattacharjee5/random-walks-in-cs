@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { forceSimulation, forceManyBody, forceLink, forceCenter } from 'd3-force';
 import { zoom } from 'd3-zoom';
 import {event as currentEvent} from 'd3-selection';
-import { SSL_OP_NO_TICKET, ENGINE_METHOD_NONE } from 'constants';
+import { rgb } from 'd3-color';
 
 const mapStateToProps = state => {
 	let stateNodes = [];
@@ -128,7 +128,7 @@ class DWD3 extends React.Component {
 			.enter()
 			.append("line")
 			.attr("stroke-width", function(d) { return d.weight / 7; } )
-			.attr("stroke", "gray")
+			.attr("stroke", function(d) { return rgb(d.red, d.green, d.blue, 0.5); })
 			.attr("class", "link");
 
 		g
