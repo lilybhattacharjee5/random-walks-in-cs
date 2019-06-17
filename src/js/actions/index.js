@@ -62,9 +62,6 @@ export function receiveInteractionsEpisode(season, episode, json) {
                         receivedAt: Date.now()
                 }
 		}
-		console.log(season);
-		console.log(episode);
-		console.log(json);
         return {
                 type: RECEIVE_INTERACTIONS_EPISODE,
                 season,

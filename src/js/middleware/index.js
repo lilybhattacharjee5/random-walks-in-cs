@@ -1,13 +1,5 @@
 import fetch from 'cross-fetch';
 import { requestInteractionsDoctor, requestInteractionsEpisode, receiveInteractionsDoctor, receiveInteractionsEpisode } from '../actions/index';
-import {
-    SELECT_DOCTOR,
-    SELECT_EPISODE,
-    REQUEST_INTERACTIONS_DOCTOR,
-    REQUEST_INTERACTIONS_EPISODE,
-    RECEIVE_INTERACTIONS_DOCTOR,
-    RECEIVE_INTERACTIONS_EPISODE
-} from '../constants/action-types';
 
 export function fetchInteractions(doctor, season, episode) {
     return function(dispatch) {

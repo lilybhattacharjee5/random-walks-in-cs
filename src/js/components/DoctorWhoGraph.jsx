@@ -39,7 +39,7 @@ function DoctorWhoGraph({ nodes = [], links = [], season = undefined, episode = 
 
 
 	if (nodes.length === 0 || links.length === 0) {
-		return <div></div>;
+		return <div><p>Data is either unavailable at this time or loading.</p></div>;
 	}
 	return(
 		<div style={ {textAlign: "center"} }>

@@ -1,6 +1,5 @@
 import React from 'react';
 import DoctorWhoForm from './DoctorWhoForm';
-// import DoctorWhoGraph from './DoctorWhoGraph';
 import ConnectedDWGraph from './DoctorWhoGraph';
 
 const App = () => (

@@ -7,6 +7,7 @@ import {
     RECEIVE_INTERACTIONS_DOCTOR,
     RECEIVE_INTERACTIONS_EPISODE
 } from '../constants/action-types';
+const cacheSize = 5;
 
 function selectedDoctor(state = "1", action) {
     switch (action.type) {
@@ -62,15 +63,31 @@ function interactions(state = { isFetching: false, nodes: [], links: [] }, actio
 }
 
 function interactionsBySpecs(state = {}, action) {
+    let minKey = undefined;
+    if (Object.keys(state).length >= cacheSize) {
+        let minUpdated = Infinity;
+        for (let key in state) {
+            if (state[key]) {
+                if (state[key].hasOwnProperty("lastUpdated")) {
+                    if (state[key].lastUpdated < minUpdated) {
+                        minUpdated = state[key].lastUpdated;
+                        minKey = key;
+                    }
+                }
+            }
+        }
+    } 
+    const stateWithoutMin = Object.assign({}, state);
+    delete stateWithoutMin[minKey];
     switch (action.type) {
         case RECEIVE_INTERACTIONS_DOCTOR:
             return { 
-                ...state,
+                ...stateWithoutMin,
                 [action.doctor]: interactions(state[action.doctor], action)
             }
         case RECEIVE_INTERACTIONS_EPISODE:
             return {
-                ...state,
+                ...stateWithoutMin,
                 [`${action.season}-${action.episode}`]: interactions({ "season": state[action.season], "episode": state[action.episode] }, action),
             }
         case REQUEST_INTERACTIONS_DOCTOR:

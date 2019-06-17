@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { selectDoctor, selectEpisode } from '../actions/index';
 import { fetchInteractions } from '../middleware';
-import DoctorWhoGraph from './DoctorWhoGraph';
-import ConnectedDWGraph from './DoctorWhoGraph';
-//import { connect } from 'react-redux';
 
 function range(start, end, step = 1) {
 	var listIter = ["None"];
